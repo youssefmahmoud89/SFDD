@@ -13,5 +13,5 @@ class CorrelationLibrary(object):
 
     def pearson(input_matrix):
 
-        return np.corrcoef(input_matrix.T)
+        return np.corrcoef(input_matrix, rowvar=True)
 
