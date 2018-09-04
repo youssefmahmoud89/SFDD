@@ -57,7 +57,7 @@ class SFDD(object):
 
         '''
         if window_size == -1:
-            window_size = data.shape[0] / 2
+            window_size = int(data.shape[0] / 2)
 
         correlation_data = data[0:window_size]
         investigated_data = data[window_size:]
@@ -110,6 +110,6 @@ class SFDD(object):
         '''
         patterns = np.zeros((data.shape[1], self.pattern_count), dtype=bool)
         for i, measurements in enumerate(data.T):
-            patterns[i, 0] = patterns.stuck_at(measurements)
-            patterns[i, 1] = patterns.drift(measurements, timestamps)
+            patterns[i, 0] = PatternLibrary.stuck_at(measurements)
+            patterns[i, 1] = PatternLibrary.drift(measurements, timestamps)
         return patterns
