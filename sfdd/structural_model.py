@@ -1,4 +1,4 @@
-import yaml
+import oyaml as yaml
 import networkx as nx
 from networkx.algorithms.dag import ancestors
 
