@@ -9,7 +9,10 @@ system_components:
         type: subsystem
         parents: []
     sensed_velocities:
-        type: sybsystem
+        type: subsystem
+        parents: []
+    sensed_angle_joint:
+        type: subsystem
         parents: []
     expected_velocity:
         type: subsystem
@@ -17,6 +20,8 @@ system_components:
     cmd_vel:
         type: subsystem
         parents: []
+
+  
     pos_x:
         type: sensor
         parents: [external_camera]
@@ -29,24 +34,17 @@ system_components:
     orientation:
         type: sensor
         parents: [external_cameras]
-    battery_status:
+
+    longit_vel:
         type: sensor
-        parents: [electrical]
-    external_source_status:
+        parents: [sensed_velocities]
+    transv_vel:
         type: sensor
-        parents: [electrical]
-    current_joint1:
+        parents: [sensed_velocities]
+    angular_vel:
         type: sensor
-        parents: [sensed_joint]
-    current_joint2:
-        type: sensor
-        parents: [sensed_joint]
-    current_joint3:
-        type: sensor
-        parents: [sensed_joint]
-    current_joint4:
-        type: sensor
-        parents: [sensed_joint]
+        parents: [sensed_velocities]
+
     velocity_joint1:
         type: sensor
         parents: [sensed_joint]
@@ -59,34 +57,38 @@ system_components:
     velocity_joint4:
         type: sensor
         parents: [sensed_joint]
-    longit_vel:
+
+
+    current_joint1:
         type: sensor
-        parents: [sensed_velocities]
-    transv_vel:
+        parents: [sensed_joint]
+    current_joint2:
         type: sensor
-        parents: [sensed_velocities]
-    angular_vel:
+        parents: [sensed_joint]
+    current_joint3:
         type: sensor
-        parents: [sensed_velocities]
-    expected_velocity_joint1:
+        parents: [sensed_joint]
+    current_joint4:
         type: sensor
-        parents: [expected_velocity]
-    expected_velocity_joint2:
+        parents: [sensed_joint]
+    
+    
+    sensed_angle_joint1:
         type: sensor
-        parents: [expected_velocity]
-    expected_velocity_joint3:
+        parents: [sensed_angle_joint]
+    sensed_angle_joint2:
         type: sensor
-        parents: [expected_velocity]
-    expected_velocity_joint4:
+        parents: [sensed_angle_joint]
+    sensed_angle_joint3:
         type: sensor
-        parents: [expected_velocity]
-    longit_vel_cmd:
+        parents: [sensed_angle_joint]
+    sensed_angle_joint4:
         type: sensor
-        parents: [cmd_vel]
-    transv_vel_cmd:
+        parents: [sensed_angle_joint]
+    battery_status:
         type: sensor
-        parents: [cmd_vel]
-    angular_vel_cmd:
+        parents: [electrical]
+    external_source_status:
         type: sensor
-        parents: [cmd_vel]
+        parents: [electrical]
     
