@@ -1,0 +1,89 @@
+system_components:
+    external_camera:
+        type: subsystem
+        parents: []
+    electrical:
+        type: subsystem
+        parents: []
+    sensed_joint:
+        type: subsystem
+        parents: []
+    sensed_velocities:
+        type: sybsystem
+        parents: []
+    expected_velocity:
+        type: subsystem
+        parents: []
+    cmd_vel:
+        type: subsystem
+        parents: []
+    pos_x:
+        type: sensor
+        parents: [external_camera]
+    pos_y:
+        type: sensor
+        parents: [external_camera]
+    pos_z:
+        type: sensor
+        parents: [external_camera]
+    battery_status:
+        type: sensor
+        parents: [electrical]
+    external_source_status:
+        type: sensor
+        parents: [electrical]
+    current_joint1:
+        type: sensor
+        parents: [sensed_joint]
+    current_joint2:
+        type: sensor
+        parents: [sensed_joint]
+    current_joint3:
+        type: sensor
+        parents: [sensed_joint]
+    current_joint4:
+        type: sensor
+        parents: [sensed_joint]
+    velocity_joint1:
+        type: sensor
+        parents: [sensed_joint]
+    velocity_joint2:
+        type: sensor
+        parents: [sensed_joint]
+    velocity_joint3:
+        type: sensor
+        parents: [sensed_joint]
+    velocity_joint4:
+        type: sensor
+        parents: [sensed_joint]
+    longit_vel:
+        type: sensor
+        parents: [sensed_velocities]
+    transv_vel:
+        type: sensor
+        parents: [sensed_velocities]
+    angular_vel:
+        type: sensor
+        parents: [sensed_velocities]
+    expected_velocity_joint1:
+        type: sensor
+        parents: [expected_velocity]
+    expected_velocity_joint2:
+        type: sensor
+        parents: [expected_velocity]
+    expected_velocity_joint3:
+        type: sensor
+        parents: [expected_velocity]
+    expected_velocity_joint4:
+        type: sensor
+        parents: [expected_velocity]
+    longit_vel_cmd:
+        type: sensor
+        parents: [cmd_vel]
+    transv_vel_cmd:
+        type: sensor
+        parents: [cmd_vel]
+    angular_vel_cmd:
+        type: sensor
+        parents: [cmd_vel]
+    
