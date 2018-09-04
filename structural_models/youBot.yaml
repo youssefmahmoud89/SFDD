@@ -26,6 +26,9 @@ system_components:
     pos_z:
         type: sensor
         parents: [external_camera]
+    orientation:
+        type: sensor
+        parents: [external_cameras]
     battery_status:
         type: sensor
         parents: [electrical]
