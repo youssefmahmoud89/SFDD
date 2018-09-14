@@ -67,6 +67,9 @@ class SFDD(object):
         # in the magnitude of the correlations, not their signs
         correlations = np.abs(CorrelationLibrary.pearson(correlation_data))
 
+        nan_rows, nan_cols = np.where(np.isnan(correlations))
+        correlations[nan_rows, nan_cols] = 1.
+
         # we find which patterns are exhibited by the sensors
         patterns = self.__calculate_patterns(investigated_data, timestamps)
 
