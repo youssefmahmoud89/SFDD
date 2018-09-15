@@ -8,9 +8,7 @@ For each component n, a set of correlated sensors is produced.
 '''
 import numpy as np
 
-
 class CorrelationLibrary(object):
-
+    @staticmethod
     def pearson(input_matrix):
-
         return np.corrcoef(input_matrix, rowvar=False)
